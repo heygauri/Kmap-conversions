@@ -1,0 +1,73 @@
+List of kmap conversions:
+
+1. Conversion Type: kmap() tp kmap_local_page()
+Description: Replace kmap() with kmap_local_page() and use helper functions mempcy_from/to_page().
+
+File: lib/test_hmm.c
+Patch Type: (S)
+Line No: 549, 550 
+
+Lore Link: https://lore.kernel.org/all/20230610175712.GA348514@sumitra.com/T/
+Done: 👍
+
+2. Conversion Type: kmap() to kmap_local_page()
+Description: Replace kmap() with kmap_local_page().
+
+File: drivers/gpu/drm/i915/i915_gpu_error.c
+Patch Type: (M)
+Line No: 174 
+
+Lore Link: https://lore.kernel.org/lkml/20230617180420.GA410966@sumitra.com/T/
+Done: 👍
+
+3. Conversion Type: kmap() to page_address()
+Description: Call page_address() on page acquired with GFP_KERNEL flag.
+
+File: lib/test_bpf.c
+Patch Type: (S)
+Line No: 548 
+
+Lore Link: https://lore.kernel.org/all/20230623151644.GA434468@sumitra.com/T/
+Done: 👍
+
+4. Conversion Type: kmap() to page_address()
+Description: Call page_address() on page acquired with GFP_KERNEL flag.
+
+File: drivers/target/target_core_rd.c
+Patch Type: (S)
+Line No: 257 
+
+Lore Link: https://lore.kernel.org/lkml/20230614164454.GA390511@sumitra.com/T/
+Done: 👍
+
+5. Conversion Type: kmap() and kmap_local_page() to page_address()
+Description: Remove unnecessary calls to kmap{,_local_page}() when acquiring pages using GFP_DMA32.
+
+File: drivers/gpu/drm/gma500/mmu.c
+Patch Type: (S)
+Line No: 187, 193, 199 
+
+Lore Link: https://lore.kernel.org/lkml/20230719134314.GA7590@ubuntu/
+Status: Working
+
+6. Conversion Type: kmap_atomic() conversions
+Description:
+
+File: drivers/gpu/drm/gma500/mmu.c
+Patch Type: (S)
+Line No: 145 
+
+Lore Link:
+Status: Working
+
+7. Conversion Type:
+Description:
+
+File: fs/vboxsf/file.c
+Patch Type: (S)
+Line No: 518, 519, 520
+
+Lore Link: https://lore.kernel.org/all/20230627135115.GA452832@sumitra.com/T/
+Status: Working
+
+
